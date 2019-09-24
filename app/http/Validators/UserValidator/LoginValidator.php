@@ -93,7 +93,7 @@ class LoginValidator
     {
         if ($this->error !== '') 
         {
-            echo "<br><div class='alert alert-danger' role='alert'>";
+            echo "<div class='alert alert-danger' role='alert'>";
             echo $this->error;
             echo "</div><br>";
         }

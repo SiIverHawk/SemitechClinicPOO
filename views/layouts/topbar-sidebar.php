@@ -28,10 +28,10 @@
           <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-center"><i class="fas fa-user"></i> Users</a>
           <ul class="collapse list-unstyled" id="homeSubmenu">
             <li>
-              <a href="#"><i class="fas fa-users"></i> View users</a>
+              <a href="<?php echo VIEW_USERS ?>"><i class="fas fa-users"></i> View users</a>
             </li>
             <li>
-              <a href="#"><i class="fas fa-user-plus"></i> Add users</a>
+              <a href="<?php echo CREATE_USERS ?>"><i class="fas fa-user-plus"></i> Add users</a>
             </li>
             <li>
               <a href="#">Module stuff 3</a>

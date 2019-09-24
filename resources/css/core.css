@@ -94,7 +94,7 @@ a:focus {
   background: #fff;
 }
 
-#sidebar ul li.active > a,
+#sidebar ul li.active>a,
 a[aria-expanded="true"] {
   color: #fff;
   background: #6d7fcc;
@@ -143,8 +143,8 @@ a.article:hover {
 
 
 a.navbar-settings[aria-expanded="true"] {
-background: none !important;
-color: #212529 !important;
+  background: none !important;
+  color: #212529 !important;
 
 }
 
@@ -161,12 +161,11 @@ color: #212529 !important;
 }
 
 .core-content-wrapper {
-background: #f1f3f6;
+  background: #f1f3f6;
 }
 
-.core-panel-bg
-{
-border: 1px solid #e1e6ef;
+.core-panel-bg {
+  border: 1px solid #e1e6ef;
 }
 
 #app-loader img {
@@ -188,12 +187,46 @@ border: 1px solid #e1e6ef;
 
 @media (max-width: 768px) {
   #sidebar {
-      margin-left: -250px;
+    margin-left: -250px;
   }
+
   #sidebar.active {
-      margin-left: 0;
+    margin-left: 0;
   }
+
   #sidebarCollapse span {
-      display: none;
+    display: none;
   }
+}
+
+/* user-index */
+.clicked-tr {
+  background-color: #6d7fcc !important;
+  color: #f8f9fa;
+}
+
+#table-data tbody tr:hover {
+  color: #fff;
+  background-color: #6d7fcc;
+}
+
+.page-item.active .page-link {
+  color: #f8f9fa;
+  background-color: #6d7fcc;
+  border-color: #6d7fcc;
+}
+
+.page-link {
+  color: #212529;
+}
+
+.page-link:hover {
+  color: #f8f9fa;
+  background-color: #7386d5;
+}
+
+.table .thead-primary th {
+  color: #fff;
+  background-color: #7386d5;
+  border-color: #7386d5;
 }

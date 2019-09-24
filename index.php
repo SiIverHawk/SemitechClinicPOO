@@ -51,7 +51,7 @@ else if(count($routeParts) == 2)
     {
       switch ($routeParts[1]) 
       {
-        case 'create':
+        case 'create-users':
         $chosenRoute = 'views/user/user-create.php';
         break;
       }

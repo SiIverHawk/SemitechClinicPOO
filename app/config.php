@@ -13,6 +13,8 @@ define('DB_NAME', 'dev_semitech');
 //configuración de rutas web
 define('SERVER', 'http://localhost:8000');
 define('DASHBOARD', SERVER . '/dashboard');
+define('VIEW_USERS', SERVER . '/users');
+define('CREATE_USERS', SERVER . '/users/create-users');
 define('LOGOUT', SERVER . '/logout');
 
 //recursos

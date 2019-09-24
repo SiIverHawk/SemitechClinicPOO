@@ -61,7 +61,7 @@ include_once 'views/layouts/header.php';
                   <div class="form-group row">
                     <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
                     <div class="col-md-6">
-                      <input id="login-email" type="email" class="form-control" name="login-email" required autocomplete="email" autofocus>
+                      <input id="login-email" type="email" class="form-control" name="login-email" required autocomplete="email" autofocus value="<?php (null !== $_POST['btn-login'] && null !== $_POST['login-email'] && !empty($_POST['login-email'])) ? print($_POST['login-email']) : print('') ?>">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -70,6 +70,12 @@ include_once 'views/layouts/header.php';
                       <input id="login-password" type="password" class="form-control" name="login-password" required autocomplete="current-password">
                     </div>
                   </div>
+                  <?php
+                    if (isset($_POST['btn-login'])) 
+                    {
+                      $validateLogin->showError();
+                    }
+                  ?>
                   <div class="form-group row mb-0">
                     <div class="col-md-8 offset-md-4">
                       <button type="submit" class="btn btn-primary" name="btn-login">
@@ -86,4 +92,7 @@ include_once 'views/layouts/header.php';
     </main>
   </div>
 </body>
+<?php
+  Connection::closeConnection();
+?>
 </html>
