@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Clase para redirigir a diferentes urls
+ */
 class Redirect {
 
     /**

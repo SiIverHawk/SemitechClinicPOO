@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Clase donde se crea, verifica y destruye la autenticación
+ */
 class Session
 {
   /**

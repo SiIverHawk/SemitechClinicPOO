@@ -2,7 +2,6 @@
 
 /**
  * Configuración de la base de datos
- * @var constants
  */
 
 //configuración de mysql
