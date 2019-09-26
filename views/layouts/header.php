@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2/dist/Chart.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/chart.js@2/dist/Chart.min.css,npm/sweetalert2@8/dist/sweetalert2.min.css">
+    <link rel="shortcut icon" href="<?php echo IMG ?>favicon.ico" type="image/x-icon">
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
