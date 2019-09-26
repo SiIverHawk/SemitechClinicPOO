@@ -1,6 +1,9 @@
 <?php
 include_once('app/http/Database/UsersDatabase/UserRepository.php');
 
+/**
+ * Clase para verificar campos de formularios
+ */
 class UserValidator
 {
   
@@ -8,6 +11,12 @@ class UserValidator
 
   private $inputErrors;
 
+  /**
+   * Retorna los errores encontrados
+   *
+   * @param array $input
+   * @param boolean $connection
+   */
   public function __construct(array $input, $connection) 
   {
     $this->input = '';
@@ -16,6 +25,12 @@ class UserValidator
 
   }
 
+  /**
+   * Verifica si una variable ha sido declarada y no está vacía
+   *
+   * @param string $variable
+   * @return boolean
+   */
   private function variableStarted($variable)
   {
     if (isset($variable) && !empty($variable)) 
@@ -26,8 +41,13 @@ class UserValidator
     return false;
   }
 
-  
-
+/**
+ * valida los campos del formulario y si encuentra errores, retorna un arreglo de errores
+ *
+ * @param boolean $connection
+ * @param array $input
+ * @return array $errors
+ */
   private function validateInputs($connection , $input)
   {
     $errors = [];
@@ -39,7 +59,7 @@ class UserValidator
           
         if (!$this->variableStarted($input[$key])) 
           {
-            $errors['err']['name'] = 'No se ha ingresado un nombre';
+            $errors['err']['name'][] = 'No se ha ingresado un nombre';
           }
 
           if(strlen($input[$key]) < 3)

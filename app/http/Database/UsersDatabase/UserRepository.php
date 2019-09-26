@@ -141,6 +141,13 @@ class UserRepository
     return $user;
   }
 
+/**
+ * función para insertar User nuevo
+ *
+ * @param array $input
+ * @param boolean $connection
+ * @return array
+ */
   public function create($input, $connection)
   {
     unset($input['action']);
@@ -204,7 +211,9 @@ class UserRepository
 
 }
 
-
+/**
+ * Validacion para verificar la accion del formulario
+ */
 if (isset($_POST['action']) && !empty($_POST['action'])) 
 {
   include_once('app/config.php');
