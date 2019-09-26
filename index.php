@@ -54,6 +54,9 @@ else if(count($routeParts) == 2)
         case 'create-users':
         $chosenRoute = 'views/user/user-create.php';
         break;
+        case 'post-create-users':
+        $chosenRoute = 'app/http/Database/UsersDatabase/UserRepository.php';
+        break;
       }
     }
   }

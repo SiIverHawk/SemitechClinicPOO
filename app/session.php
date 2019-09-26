@@ -12,7 +12,7 @@ class Session
    * @param string $user
    * @return void
    */ 
-  public static function login($id, $user)
+  public static function login($id, $user, $lastname)
   {
     if (session_id() == '') 
     {
@@ -21,6 +21,7 @@ class Session
 
     $_SESSION['userId'] = $id;
     $_SESSION['userName'] = $user;
+    $_SESSION['userLastName'] = $lastname;
   }
 
   /**

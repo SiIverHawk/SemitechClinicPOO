@@ -38,7 +38,6 @@ $(document).ready(function ()
   {
     if ($('#user-save').attr('data-save') == 'save')
     {
-      console.log('clickeado');
       Swal.fire(
         {
           title: 'Verificación de datos',
@@ -65,33 +64,16 @@ $(document).ready(function ()
           $.ajax(
             {
               type: 'POST',
-              data: JSON.stringify({
+              data: {
+                'action': $('#user-save').attr('data-save'),
                 'user-name': $('#user-name').val(),
+                'user-lastname': $('#user-lastname').val(),
                 'user-email': $('#user-email').val(),
                 'user-password': $('#user-password').val(),
                 'user-password-confirmation': $('#user-password-confirmation').val(),
-              }),
-              dataType: 'JSON',
-              url: "",
-              error: function(err)
-              {
-                if (err.status == 422) 
-                {
-                  var list = '';
-                  $.each(err.responseJSON.errors, function(index, value)
-                  {
-                    list+= '<li>' + value + '</li>'
-                  });
-                  Swal.fire(
-                    {
-                      type: 'error',
-                      title: 'Hay campos inválidos',
-                      html: list,
-                      confirmButtonText: 'Regresar'
-                    }
-                  );
-                }
               },
+              dataType: 'JSON',
+              url: $('#user-action').attr('url-action'),
               success: function(json)
               {
                 if (json.success) 
@@ -103,6 +85,28 @@ $(document).ready(function ()
                       title: json.message,
                       showConfirmButton: false,
                       timer: 1000
+                    }
+                  );
+                }
+                else
+                {
+                  var list = '';
+                  var parsed = json[0].err;
+                  
+                  $.each(parsed, function (index, value)
+                  {
+                    $.each(value, function (index, value2)
+                    {
+                      list+= '<li>' + value2 + '</li>'
+                    });
+                  });
+
+                  Swal.fire(
+                    {
+                      type: 'error',
+                      title: 'Hay campos inválidos',
+                      html: list,
+                      confirmButtonText: 'Regresar'
                     }
                   );
                 }

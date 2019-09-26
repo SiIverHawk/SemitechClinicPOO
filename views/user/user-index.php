@@ -23,6 +23,7 @@
       <th>Nombre</th>
       <th>Apellido</th>
       <th>Correo</th>
+      <th>Fecha de creación</th>
     </thead>
     <tbody>
   <?php
@@ -41,6 +42,9 @@
         </td>
         <td>
           <?php echo $user->getEmail(); ?>
+        </td>
+        <td>
+          <?php echo $user->getCreatedat(); ?>
         </td>
       </tr>
   <?php

@@ -17,7 +17,7 @@
           if(Session::isSession())
           {
         ?>
-            <p class="text-center"><i class="fas fa-user"></i> <?php echo $_SESSION['userName'] ?></p>
+            <p class="text-center"><i class="fas fa-user"></i> <?php echo $_SESSION['userName'] . ' ' . $_SESSION['userLastName'] ?></p>
         <?php
           } 
         ?>

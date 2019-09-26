@@ -23,7 +23,8 @@ if (isset($_POST['btn-login']))
   {
     Session::login(
       $validateLogin->getUser()->getId(),
-      $validateLogin->getUser()->getName()
+      $validateLogin->getUser()->getName(),
+      $validateLogin->getUser()->getLastName()
     );
 
     Redirect::redirectTo(DASHBOARD);
